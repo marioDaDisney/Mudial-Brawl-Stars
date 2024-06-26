@@ -54,3 +54,31 @@ function campeonato() {
         }
     })
 }
+
+function cadastrar() {
+
+    rl.question('Digite o nome da equipe: ', (Nequipe) => {
+		rl.question('Digite o nome do primeiro jogador: ', (jogador1) => {
+			rl.question('Digite o nome do segundo jogador: ', (jogador2) => {
+                rl.question('Digite o nome do terceiro jogador: ', (jogador3) => {
+                   equipes.push({ equipe: Nequipe, jogador1: jogador1, jogador2: jogador2, jogador3: jogador3 })
+                    campeonato()
+                })
+			})
+		})
+	})
+}
+
+function listaequipes() {
+
+    if (equipes == 0) {
+        console.log("Não á equipes listados!")
+       } else {
+        equipes.forEach((equipe,i)=>{
+            console.log(`Equipe ${equipes[i].equipe}
+            Jogadores: ${equipes[i].jogador1}, ${equipes[i].jogador2}, ${equipes[i].jogador3}
+            `)
+        })
+       }
+       campeonato()
+}
